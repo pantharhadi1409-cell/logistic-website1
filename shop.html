@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | NEXUS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="orb-container">
+        <div class="glow-orb orb-1" style="opacity: 0.2; width: 300px; height: 300px;"></div>
+    </div>
+    
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="index.html" class="logo">NEXUS</a>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">0</span>
+            </a>
+            <button id="theme-toggle" class="btn-icon"><i class="fas fa-sun"></i></button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>NEXUS <span>CATALOG</span></h1>
+        <p>Explore 50+ premium tech and studio products.</p>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 40px; align-items: center;" class="reveal">
+            <p style="color: var(--text-secondary);">Showing 18 products per page</p>
+            <select style="padding: 10px 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-primary); border-radius: 10px; font-family: 'Outfit';">
+                <option style="background: var(--bg-color);">Sort by: Featured</option>
+                <option style="background: var(--bg-color);">Price: Low to High</option>
+                <option style="background: var(--bg-color);">Price: High to Low</option>
+            </select>
+        </div>
+        
+        <div id="shop-grid" class="grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <div id="pagination" class="pagination">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

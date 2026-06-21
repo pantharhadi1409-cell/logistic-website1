@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEXUS Creative Studio - Breathtaking visual design, motion graphics, and cinematic UI/UX experiences.">
+    <title>Creative Studio | NEXUS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="index.html" class="logo">NEXUS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="tech.html">Tech</a>
+            <a href="studio.html" class="active">Studio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>NEXUS <span style="color: var(--accent-2);">STUDIO</span></h1>
+        <p>Breathtaking visual design, motion graphics, and cinematic UI/UX experiences.</p>
+    </header>
+
+    <section class="section">
+        <div class="grid">
+            <div class="card reveal" style="border-color: rgba(112,0,255,0.3);">
+                <i class="fas fa-vector-square card-icon" style="color: var(--accent-2);"></i>
+                <h3>UI/UX Design</h3>
+                <p>User-centric interfaces that blend intuitive navigation with striking visual aesthetics. We design products people love to use.</p>
+            </div>
+            <div class="card reveal" style="transition-delay: 0.1s; border-color: rgba(112,0,255,0.3);">
+                <i class="fas fa-cube card-icon" style="color: var(--accent-2);"></i>
+                <h3>3D & Motion</h3>
+                <p>Cinematic webGL experiences, fluid micro-interactions, and 3D product renders that bring static concepts to life.</p>
+            </div>
+            <div class="card reveal" style="transition-delay: 0.2s; border-color: rgba(112,0,255,0.3);">
+                <i class="fas fa-font card-icon" style="color: var(--accent-2);"></i>
+                <h3>Brand Identity</h3>
+                <p>Comprehensive branding systems, logo design, and typography selection to establish a commanding market presence.</p>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top: 80px; text-align: center;">
+            <h2 style="margin-bottom: 30px;">Featured <span style="color: var(--accent-2);">Work</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
+                <div class="card" style="height: 250px; background: linear-gradient(45deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center;">
+                    <h3 style="color: rgba(255,255,255,0.5);">Project Alpha</h3>
+                </div>
+                <div class="card" style="height: 250px; background: linear-gradient(45deg, #0f0c29, #302b63); display: flex; align-items: center; justify-content: center;">
+                    <h3 style="color: rgba(255,255,255,0.5);">Project Beta</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS Tech & Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

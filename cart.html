@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | NEXUS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="index.html" class="logo">NEXUS</a>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-icon-container active">
+                <i class="fas fa-shopping-cart"></i> Cart
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header" style="padding-bottom: 40px;">
+        <h1>YOUR <span>CART</span></h1>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="cart-container reveal">
+            <table class="cart-table" id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+            
+            <div class="cart-total-container">
+                <div class="cart-total">
+                    <h3>Total: <span id="cart-total-price">$0.00</span></h3>
+                    <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartBody = document.getElementById('cart-body');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+            let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
+
+            function renderCart() {
+                cartBody.innerHTML = '';
+                let total = 0;
+
+                if (cart.length === 0) {
+                    cartBody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 40px; color: var(--text-secondary);">Your cart is empty. <a href="shop.html" style="color: var(--accent-1);">Continue Shopping</a></td></tr>';
+                    cartTotalPrice.textContent = '$0.00';
+                    return;
+                }
+
+                cart.forEach((item, index) => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><strong style="color: #fff;">${item.name}</strong></td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <button class="btn" style="padding: 5px 10px; border-radius: 5px;" onclick="updateQty(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="btn" style="padding: 5px 10px; border-radius: 5px;" onclick="updateQty(${index}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td>$${subtotal.toFixed(2)}</td>
+                        <td><button class="btn" style="padding: 5px 15px; border-color: #ff3366; color: #ff3366;" onclick="removeItem(${index})"><i class="fas fa-trash"></i></button></td>
+                    `;
+                    cartBody.appendChild(tr);
+                });
+
+                cartTotalPrice.textContent = '$' + total.toFixed(2);
+                
+                // Update badge
+                const badge = document.querySelector('.cart-badge');
+                if(badge) badge.textContent = cart.reduce((sum, i) => sum + i.quantity, 0);
+            }
+
+            window.updateQty = (index, change) => {
+                cart[index].quantity += change;
+                if (cart[index].quantity <= 0) cart.splice(index, 1);
+                localStorage.setItem('nexus_cart', JSON.stringify(cart));
+                renderCart();
+            };
+
+            window.removeItem = (index) => {
+                cart.splice(index, 1);
+                localStorage.setItem('nexus_cart', JSON.stringify(cart));
+                renderCart();
+            };
+
+            renderCart();
+        });
+    </script>
+</body>
+</html>

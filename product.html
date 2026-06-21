@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus CyberBoard V2 | NEXUS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="index.html" class="logo">NEXUS</a>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-icon-container">
+                <i class="fas fa-shopping-cart"></i> Cart
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <div style="height: 100px;"></div>
+
+    <section class="section">
+        <a href="shop.html" style="color: var(--accent-1); text-decoration: none; margin-bottom: 30px; display: inline-block;">&larr; Back to Shop</a>
+        
+        <div class="product-detail-container reveal">
+            <div class="product-gallery">
+                <i class="fas fa-keyboard"></i>
+            </div>
+            <div class="product-info">
+                <p class="product-category" style="margin-bottom: 10px;">Hardware</p>
+                <h1>Nexus CyberBoard V2</h1>
+                <div class="price">$249.99</div>
+                <p>The ultimate mechanical keyboard engineered for developers and designers. Featuring custom linear switches, an aerospace-grade aluminum unibody, and fully programmable per-key RGB illuminated by our proprietary Nexus Engine.</p>
+                
+                <ul style="color: var(--text-secondary); margin-bottom: 40px; padding-left: 20px; line-height: 2;">
+                    <li>75% Compact Layout</li>
+                    <li>Hot-Swappable PCB</li>
+                    <li>Tri-Mode Connectivity (2.4GHz, Bluetooth 5.1, Wired)</li>
+                    <li>10,000mAh Battery (up to 30 days of use)</li>
+                </ul>
+                
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <input type="number" value="1" min="1" style="width: 80px; padding: 15px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 10px; color: #fff; text-align: center; font-size: 1.1rem; font-family: 'Outfit';">
+                    <button class="btn btn-primary add-to-cart" data-id="p1" data-name="Nexus CyberBoard V2" data-price="249.99" style="flex: 1;"><i class="fas fa-shopping-cart" style="margin-right: 10px;"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

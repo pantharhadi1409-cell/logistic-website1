@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NEXUS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="index.html" class="logo">NEXUS</a>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-icon-container">
+                <i class="fas fa-shopping-cart"></i> Cart
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header" style="padding-bottom: 40px;">
+        <h1>SECURE <span>CHECKOUT</span></h1>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="product-detail-container reveal" style="align-items: start;">
+            
+            <!-- Billing Details -->
+            <div class="card" style="border: none; background: rgba(255,255,255,0.02);">
+                <h3 style="margin-bottom: 30px; font-size: 1.8rem;">Billing Details</h3>
+                <form id="checkout-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Street Address" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <input type="text" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Zip / Postal Code" required>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; font-size: 1.8rem;">Payment Method</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Card Number" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <input type="text" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="CVC" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="cart-total" style="width: 100%; border: 1px solid var(--glass-border); background: var(--glass-bg);">
+                <h3 style="border-bottom: 1px solid var(--glass-border); padding-bottom: 15px;">Order Summary</h3>
+                <div id="checkout-summary" style="margin: 20px 0;">
+                    <!-- JS populated -->
+                </div>
+                <div style="border-top: 1px solid var(--glass-border); padding-top: 20px; margin-top: 20px;">
+                    <h3 style="display: flex; justify-content: space-between; color: var(--accent-1);">
+                        Total <span id="checkout-total">$0.00</span>
+                    </h3>
+                </div>
+                <button form="checkout-form" class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 1.1rem; padding: 15px;">Place Order</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const summaryContainer = document.getElementById('checkout-summary');
+            const totalContainer = document.getElementById('checkout-total');
+            let cart = JSON.parse(localStorage.getItem('nexus_cart')) || [];
+            
+            if (cart.length === 0) {
+                summaryContainer.innerHTML = '<p style="color: var(--text-secondary);">Your cart is empty.</p>';
+            } else {
+                let total = 0;
+                cart.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    summaryContainer.innerHTML += `
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--text-secondary);">
+                            <span>${item.name} <strong>x${item.quantity}</strong></span>
+                            <span>$${subtotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                });
+                totalContainer.textContent = '$' + total.toFixed(2);
+            }
+
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                if(cart.length === 0) {
+                    alert("Your cart is empty!");
+                    return;
+                }
+                alert("Order placed successfully! Thank you for shopping at NEXUS.");
+                localStorage.removeItem('nexus_cart');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

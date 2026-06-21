@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEXUS Store - High-End Tech Hardware & Digital Studio Assets.">
+    <title>NEXUS | Premium Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Orbs -->
+    <div class="orb-container">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="index.html" class="logo">NEXUS</a>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">0</span>
+            </a>
+            <button id="theme-toggle" class="btn-icon"><i class="fas fa-sun"></i></button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>NEXT-GEN TECH <br><span style="color: var(--accent-1);">& STUDIO ASSETS</span></h1>
+            <p>Upgrade your workflow with our curated selection of premium mechanical keyboards, AI processing hardware, and cinematic 3D motion packs.</p>
+            <div class="btn-group">
+                <a href="shop.html" class="btn btn-primary">Enter the Shop</a>
+                <a href="#featured" class="btn" style="margin-left: 15px;">Featured</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="marquee-wrapper">
+        <div class="marquee">
+            NEXUS STORE • PREMIUM HARDWARE • DIGITAL ASSETS • NEXT-GEN TECH • EXCLUSIVE GEAR • NEXUS STORE • PREMIUM HARDWARE • DIGITAL ASSETS • NEXT-GEN TECH • EXCLUSIVE GEAR • 
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="section" style="padding-top: 50px;">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            <div class="feature-box reveal tilt">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>Global Express Shipping</h4>
+                <p>We deliver your high-end gear anywhere on the planet within 48 hours, fully insured.</p>
+            </div>
+            <div class="feature-box reveal tilt" style="transition-delay: 0.1s;">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Encrypted Transactions</h4>
+                <p>Our checkout process uses military-grade encryption to ensure your assets are protected.</p>
+            </div>
+            <div class="feature-box reveal tilt" style="transition-delay: 0.2s;">
+                <i class="fas fa-medal"></i>
+                <h4>Studio Quality Guarantee</h4>
+                <p>Every product is tested by industry professionals before hitting our catalog.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section">
+        <h2 class="section-title reveal">Shop By <span>Category</span></h2>
+        <div class="category-grid">
+            <a href="shop.html" class="cat-card reveal tilt">
+                <i class="fas fa-microchip"></i>
+                <div class="cat-content">
+                    <h3>Hardware</h3>
+                    <p style="color: var(--accent-1);">Explore Gear &rarr;</p>
+                </div>
+            </a>
+            <a href="shop.html" class="cat-card reveal tilt" style="transition-delay: 0.1s;">
+                <i class="fas fa-cube"></i>
+                <div class="cat-content">
+                    <h3>Digital Assets</h3>
+                    <p style="color: var(--accent-1);">Explore Assets &rarr;</p>
+                </div>
+            </a>
+            <a href="shop.html" class="cat-card reveal tilt" style="transition-delay: 0.2s;">
+                <i class="fas fa-headphones"></i>
+                <div class="cat-content">
+                    <h3>Audio Gear</h3>
+                    <p style="color: var(--accent-1);">Explore Audio &rarr;</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="featured" class="section">
+        <h2 class="section-title reveal">Trending <span>Now</span></h2>
+        <div class="grid">
+            <div class="product-card reveal tilt">
+                <a href="product.html" style="text-decoration: none;">
+                    <div class="product-image"><i class="fas fa-keyboard"></i></div>
+                </a>
+                <p class="product-category">Hardware</p>
+                <a href="product.html" class="product-title">Nexus CyberBoard V2</a>
+                <div class="product-price">$249.99</div>
+                <div class="product-footer">
+                    <button class="btn add-to-cart" data-id="p1" data-name="Nexus CyberBoard V2" data-price="249.99"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </div>
+            
+            <div class="product-card reveal tilt" style="transition-delay: 0.1s;">
+                <div class="product-image"><i class="fas fa-cube"></i></div>
+                <p class="product-category">Digital Assets</p>
+                <a href="#" class="product-title">Neon 3D Elements</a>
+                <div class="product-price">$89.00</div>
+                <div class="product-footer">
+                    <button class="btn add-to-cart" data-id="p2" data-name="Neon 3D Elements" data-price="89.00"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </div>
+
+            <div class="product-card reveal tilt" style="transition-delay: 0.2s;">
+                <div class="product-image"><i class="fas fa-vr-cardboard"></i></div>
+                <p class="product-category">Hardware</p>
+                <a href="#" class="product-title">XR Vision Pro</a>
+                <div class="product-price">$899.00</div>
+                <div class="product-footer">
+                    <button class="btn add-to-cart" data-id="p3" data-name="XR Vision Pro" data-price="899.00"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section" style="padding-top: 0;">
+        <div class="newsletter-section reveal">
+            <h2>Join the <span style="color: var(--accent-2);">Elite</span></h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Subscribe to receive exclusive drops, early access to digital assets, and insider hardware news.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary" style="border-radius: 30px; cursor: none;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEXUS Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
